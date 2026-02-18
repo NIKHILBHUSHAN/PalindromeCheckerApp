@@ -27,6 +27,23 @@ class UseCase3{
         return text.equals(reverse);
     }
 }
+
+class UseCase4{
+    boolean palindromeChecker(String text){
+        char[] charArray = text.toCharArray();
+        int start = 0;
+        int end = charArray.length-1;
+        while(start<end){
+            if(charArray[start]!=charArray[end]){
+                return false;
+
+            }
+            start++;
+            end--;
+        }
+        return true;
+    }
+}
 public class PalindromeCheckerApp {
     public static void main(String[] args) {
         UseCase1 u1=new UseCase1();
@@ -40,5 +57,8 @@ public class PalindromeCheckerApp {
 
         UseCase3 u3=new UseCase3();
         System.out.println("Is it a palindrome?(UseCase-3):"+u3.palindromeChecker(str));
+
+        UseCase4 u4=new UseCase4();
+        System.out.println("Is it a palindrome?(Usecase-4):"+u4.palindromeChecker(str));
     }
 }
