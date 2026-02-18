@@ -80,6 +80,23 @@ class UseCase6{
         return palindrome;
     }
 }
+
+class UseCase7{
+    boolean palindromeChecker(String text){
+        Deque<Character> dq = new ArrayDeque<>();
+        for (char ch : text.toCharArray()) {
+            dq.addLast(ch);
+        }
+
+        while (dq.size()>1){
+            if(dq.removeFirst()!=dq.removeLast()){
+              return false;
+            }
+        }
+        return true;
+
+    }
+}
 public class PalindromeCheckerApp {
     public static void main(String[] args) {
         UseCase1 u1=new UseCase1();
@@ -102,5 +119,8 @@ public class PalindromeCheckerApp {
 
         UseCase6 u6=new UseCase6();
         System.out.println("Is it a palindrome?:(UseCase-6):"+u6.palindromeChecker(str));
+
+        UseCase7 u7=new UseCase7();
+        System.out.println("Is it a palindrome?:(UseCase-7):"+u7.palindromeChecker(str));
     }
 }
