@@ -1,5 +1,5 @@
-import java.util.Scanner;
-import java.util.Stack;
+import java.util.*;
+
 class UseCase1{
     void display(){
         System.out.println("Welcome to the Palindrome Checker Management System");
@@ -62,6 +62,24 @@ class UseCase5{
         return palindrome;
     }
 }
+
+class UseCase6{
+    boolean palindromeChecker(String text){
+        Deque<Character> stack = new ArrayDeque<>();
+        Queue<Character> queue = new ArrayDeque<>();
+        for (char ch : text.toCharArray()) {
+            stack.push(ch);
+            queue.add(ch);
+        }
+        boolean palindrome = true;
+        while (!stack.isEmpty() && !queue.isEmpty()){
+            if(stack.pop()!=queue.remove()){
+                palindrome = false;
+            }
+        }
+        return palindrome;
+    }
+}
 public class PalindromeCheckerApp {
     public static void main(String[] args) {
         UseCase1 u1=new UseCase1();
@@ -81,5 +99,8 @@ public class PalindromeCheckerApp {
 
         UseCase5 u5=new UseCase5();
         System.out.println("Is it a palindrome:(Usecase-5):"+u5.palindromeChecker(str));
+
+        UseCase6 u6=new UseCase6();
+        System.out.println("Is it a palindrome?:(UseCase-6):"+u6.palindromeChecker(str));
     }
 }
