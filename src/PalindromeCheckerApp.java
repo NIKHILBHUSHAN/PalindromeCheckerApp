@@ -17,6 +17,16 @@ class UseCase2{
         return palindrome;
     }
 }
+
+class UseCase3{
+    String reverse="";
+    boolean palindromeChecker(String text){
+        for(int i=text.length()-1;i>=0;i--)
+            reverse+=text.charAt(i);
+
+        return text.equals(reverse);
+    }
+}
 public class PalindromeCheckerApp {
     public static void main(String[] args) {
         UseCase1 u1=new UseCase1();
@@ -28,5 +38,7 @@ public class PalindromeCheckerApp {
         String str=input.next();
         System.out.println("Is it a palindrome?:"+u2.palindromeChecker(str));
 
+        UseCase3 u3=new UseCase3();
+        System.out.println("Is it a palindrome?(UseCase-3):"+u3.palindromeChecker(str));
     }
 }
