@@ -111,6 +111,17 @@ class UseCase8{
         return firsthalf.equals(secondhalf);
     }
 }
+class UseCase9{
+     boolean palindromeChecker(String str, int start, int end) {
+        if (start >= end) {
+            return true;
+        }
+        if (str.charAt(start) != str.charAt(end)) {
+            return false;
+        }
+        return palindromeChecker(str, start + 1, end - 1);
+    }
+}
 public class PalindromeCheckerApp {
     public static void main(String[] args) {
         UseCase1 u1=new UseCase1();
@@ -139,5 +150,8 @@ public class PalindromeCheckerApp {
 
         UseCase8 u8=new UseCase8();
         System.out.println("Is it a palindrome?:(UseCase-8):"+u8.palindromeChecker(str));
+
+        UseCase9 u9=new UseCase9();
+        System.out.println("Is it a palindrome?:(UseCase-8):"+u9.palindromeChecker(str,0,str.length()-1));
     }
 }
