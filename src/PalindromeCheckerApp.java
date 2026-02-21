@@ -112,7 +112,7 @@ class UseCase8{
     }
 }
 class UseCase9{
-     boolean palindromeChecker(String str, int start, int end) {
+    boolean palindromeChecker(String str, int start, int end) {
         if (start >= end) {
             return true;
         }
@@ -152,6 +152,8 @@ public class PalindromeCheckerApp {
         System.out.println("Is it a palindrome?:(UseCase-8):"+u8.palindromeChecker(str));
 
         UseCase9 u9=new UseCase9();
-        System.out.println("Is it a palindrome?:(UseCase-8):"+u9.palindromeChecker(str,0,str.length()-1));
+        System.out.println("Is it a palindrome?:(UseCase-9):"+u9.palindromeChecker(str,0,str.length()-1));
+
+
     }
 }
