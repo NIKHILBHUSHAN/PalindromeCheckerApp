@@ -122,6 +122,18 @@ class UseCase9{
         return palindromeChecker(str, start + 1, end - 1);
     }
 }
+
+class UseCase10{
+    boolean palindromeChecker(String str){
+        String normalize=str.replaceAll(" ","").toLowerCase();
+        for(int i=0;i<normalize.length()/2;i++){
+            if(normalize.charAt(i)!=normalize.charAt(normalize.length()-i-1)){
+                return false;
+            }
+        }
+        return true;
+    }
+}
 public class PalindromeCheckerApp {
     public static void main(String[] args) {
         UseCase1 u1=new UseCase1();
@@ -154,6 +166,11 @@ public class PalindromeCheckerApp {
         UseCase9 u9=new UseCase9();
         System.out.println("Is it a palindrome?:(UseCase-9):"+u9.palindromeChecker(str,0,str.length()-1));
 
+        System.out.print("Input Sentence: ");
+        input.nextLine();
+        String str1=input.nextLine();
+        UseCase10 u10=new UseCase10();
+        System.out.println("Is it a palindrome?:(UseCase-10):"+u10.palindromeChecker(str1));
 
     }
 }
