@@ -97,6 +97,20 @@ class UseCase7{
 
     }
 }
+
+class UseCase8{
+    boolean palindromeChecker(String text){
+        LinkedList<Character> firsthalf = new LinkedList<>();
+        LinkedList<Character> secondhalf = new LinkedList<>();
+        for (int i=0;i<=text.length()/2;i++){
+            firsthalf.add(text.charAt(i));
+        }
+        for (int i=text.length()-1;i>=text.length()/2;i--){
+            secondhalf.add(text.charAt(i));
+        }
+        return firsthalf.equals(secondhalf);
+    }
+}
 public class PalindromeCheckerApp {
     public static void main(String[] args) {
         UseCase1 u1=new UseCase1();
@@ -122,5 +136,8 @@ public class PalindromeCheckerApp {
 
         UseCase7 u7=new UseCase7();
         System.out.println("Is it a palindrome?:(UseCase-7):"+u7.palindromeChecker(str));
+
+        UseCase8 u8=new UseCase8();
+        System.out.println("Is it a palindrome?:(UseCase-8):"+u8.palindromeChecker(str));
     }
 }
