@@ -134,6 +134,24 @@ class UseCase10{
         return true;
     }
 }
+class PalindromeService{
+    public boolean palindromeChecker(String str){
+        char[] charArray = str.toCharArray();
+        int start = 0;
+        int end = charArray.length-1;
+        while(start<end){
+            if(charArray[start]!=charArray[end]){
+                return false;
+
+            }
+            start++;
+            end--;
+        }
+        return true;
+
+    }
+
+}
 public class PalindromeCheckerApp {
     public static void main(String[] args) {
         UseCase1 u1=new UseCase1();
@@ -171,6 +189,10 @@ public class PalindromeCheckerApp {
         String str1=input.nextLine();
         UseCase10 u10=new UseCase10();
         System.out.println("Is it a palindrome?:(UseCase-10):"+u10.palindromeChecker(str1));
+
+        PalindromeService u11=new PalindromeService();
+        System.out.println("Is it a palindrome?:(UseCase-11):"+u11.palindromeChecker(str));
+
 
     }
 }
