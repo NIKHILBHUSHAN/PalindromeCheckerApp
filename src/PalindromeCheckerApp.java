@@ -231,9 +231,18 @@ public class PalindromeCheckerApp {
         System.out.println("Is it a palindrome?:(UseCase-11):"+u11.palindromeChecker(str));
 
         PalindromeStrategy stack=new StackStrategy();
+        long start=System.nanoTime();
         System.out.println("Is it a palindrome?:(UseCase-12[StackStrategy]):"+stack.palindromeChecker(str));
+        long end=System.nanoTime();
+        long duration=end-start;
+        System.out.println("Execution time of StackStrategy:"+ duration +"ns");
         PalindromeStrategy deque=new DequeStrategy();
+        long start1=System.nanoTime();
         System.out.println("Is it a palindrome?:(UseCase-12[DequeStrategy]):"+deque.palindromeChecker(str));
+        long end1=System.nanoTime();
+        long duration1=end1-start1;
+        System.out.println("Execution time of dequeStrategy:"+ duration1 +"ns");
+
 
 
 
