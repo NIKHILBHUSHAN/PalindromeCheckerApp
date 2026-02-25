@@ -134,6 +134,7 @@ class UseCase10{
         return true;
     }
 }
+
 class PalindromeService{
     public boolean palindromeChecker(String str){
         char[] charArray = str.toCharArray();
@@ -152,6 +153,42 @@ class PalindromeService{
     }
 
 }
+
+interface PalindromeStrategy{
+    boolean palindromeChecker(String text);
+}
+
+class StackStrategy implements PalindromeStrategy{
+    public boolean palindromeChecker(String text){
+        Stack<Character> stack=new Stack<>();
+        for (char c:text.toCharArray()){
+            stack.push(c);
+        }
+        for (char c:text.toCharArray()){
+            if(stack.pop()!=c){
+                return false;
+            }
+        }
+        return true;
+    }
+}
+
+class DequeStrategy implements PalindromeStrategy{
+
+    public boolean palindromeChecker(String text) {
+        Deque<Character> deque=new ArrayDeque<>();
+        for (char c:text.toCharArray()){
+            deque.addLast(c);
+        }
+        while(deque.size()>1){
+            if (deque.removeFirst()!=deque.removeLast())
+                return false;
+        }
+        return true;
+
+    }
+}
+
 public class PalindromeCheckerApp {
     public static void main(String[] args) {
         UseCase1 u1=new UseCase1();
@@ -192,6 +229,12 @@ public class PalindromeCheckerApp {
 
         PalindromeService u11=new PalindromeService();
         System.out.println("Is it a palindrome?:(UseCase-11):"+u11.palindromeChecker(str));
+
+        PalindromeStrategy stack=new StackStrategy();
+        System.out.println("Is it a palindrome?:(UseCase-12[StackStrategy]):"+stack.palindromeChecker(str));
+        PalindromeStrategy deque=new DequeStrategy();
+        System.out.println("Is it a palindrome?:(UseCase-12[DequeStrategy]):"+deque.palindromeChecker(str));
+
 
 
     }
