@@ -198,28 +198,69 @@ public class PalindromeCheckerApp {
         UseCase2 u2=new UseCase2();
         System.out.print("Input Text: ");
         String str=input.next();
+
+        long start2=System.nanoTime();
         System.out.println("Is it a palindrome?:"+u2.palindromeChecker(str));
+        long end2=System.nanoTime();
+        long duration2=end2-start2;
+        System.out.println("Execution time:"+duration2+"ns");
+        System.out.println();
 
         UseCase3 u3=new UseCase3();
+        long start3=System.nanoTime();
         System.out.println("Is it a palindrome?(UseCase-3):"+u3.palindromeChecker(str));
+        long end3=System.nanoTime();
+        long duration3=end3-start3;
+        System.out.println("Execution time:"+duration3+"ns");
+        System.out.println();
 
         UseCase4 u4=new UseCase4();
+        long start4=System.nanoTime();
         System.out.println("Is it a palindrome?(Usecase-4):"+u4.palindromeChecker(str));
+        long end4=System.nanoTime();
+        long duration4=end4-start4;
+        System.out.println("Execution time:"+duration4+"ns");
+        System.out.println();
 
         UseCase5 u5=new UseCase5();
+        long start5=System.nanoTime();
         System.out.println("Is it a palindrome:(Usecase-5):"+u5.palindromeChecker(str));
+        long end5=System.nanoTime();
+        long duration5=end5-start5;
+        System.out.println("Execution time:"+duration5+"ns");
+        System.out.println();
 
         UseCase6 u6=new UseCase6();
+        long start6=System.nanoTime();
         System.out.println("Is it a palindrome?:(UseCase-6):"+u6.palindromeChecker(str));
+        long end6=System.nanoTime();
+        long duration6=end6-start6;
+        System.out.println("Execution time:"+duration6+"ns");
+        System.out.println();
 
         UseCase7 u7=new UseCase7();
+        long start7=System.nanoTime();
         System.out.println("Is it a palindrome?:(UseCase-7):"+u7.palindromeChecker(str));
+        long end7=System.nanoTime();
+        long duration7=end7-start7;
+        System.out.println("Execution time:"+duration7+"ns");
+        System.out.println();
 
         UseCase8 u8=new UseCase8();
+        long start8=System.nanoTime();
         System.out.println("Is it a palindrome?:(UseCase-8):"+u8.palindromeChecker(str));
+        long end8=System.nanoTime();
+        long duration8=end8-start8;
+        System.out.println("Execution time:"+duration8+"ns");
+        System.out.println();
 
         UseCase9 u9=new UseCase9();
+        long start9=System.nanoTime();
         System.out.println("Is it a palindrome?:(UseCase-9):"+u9.palindromeChecker(str,0,str.length()-1));
+        long end9=System.nanoTime();
+        long duration9=end9-start9;
+        System.out.println("Execution time:"+duration9+"ns");
+        System.out.println();
 
         System.out.print("Input Sentence: ");
         input.nextLine();
@@ -228,14 +269,21 @@ public class PalindromeCheckerApp {
         System.out.println("Is it a palindrome?:(UseCase-10):"+u10.palindromeChecker(str1));
 
         PalindromeService u11=new PalindromeService();
+        long start10=System.nanoTime();
         System.out.println("Is it a palindrome?:(UseCase-11):"+u11.palindromeChecker(str));
+        long end10=System.nanoTime();
+        long duration10=end10-start10;
+        System.out.println("Execution time:"+duration10+"ns");
+        System.out.println();
 
         PalindromeStrategy stack=new StackStrategy();
+
         long start=System.nanoTime();
         System.out.println("Is it a palindrome?:(UseCase-12[StackStrategy]):"+stack.palindromeChecker(str));
         long end=System.nanoTime();
         long duration=end-start;
         System.out.println("Execution time of StackStrategy:"+ duration +"ns");
+
         PalindromeStrategy deque=new DequeStrategy();
         long start1=System.nanoTime();
         System.out.println("Is it a palindrome?:(UseCase-12[DequeStrategy]):"+deque.palindromeChecker(str));
